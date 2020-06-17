@@ -20,17 +20,9 @@ class Solution:
 
 
 if __name__ == '__main__':
-    node1 = TreeNode(1)
-    node2 = TreeNode(2)
-    node3 = TreeNode(3)
-    node4 = TreeNode(4)
-    node5 = TreeNode(5)
-    node6 = TreeNode(6)
-    node1.left = node2
-    node1.right = node3
-    node2.left = node4
-    node2.right = node5
-    node3.left = node6
+    import utils
+    nodes = [1, 2, 3, 4, 5, 6, None, None, None, None, None, None, None]
+    root = utils.gen_btree(nodes, 0)
 
-    res = Solution().countNodes(node1)
+    res = Solution().countNodes(root)
     print(res)
