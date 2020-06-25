@@ -8,6 +8,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 def gen_btree(nodes, start):
     """ 生成二叉树
     nodes: 数组
@@ -23,3 +24,25 @@ def gen_btree(nodes, start):
     if rnode < len(nodes):
         root.right = gen_btree(nodes, rnode)
     return root
+
+
+def print_btree(root):
+    """ 打印二叉树，返回二叉树的数组存储形式
+    """
+    if not root:
+        return []
+
+    res = []
+    root_list = [root]
+    child_list = []
+    while root_list:
+        for node in root_list:
+            if node:
+                res.append(node.val)
+            if node.left:
+                child_list.append(node.left)
+            if node.right:
+                child_list.append(node.right)
+        root_list = child_list
+        child_list = []
+    return res
