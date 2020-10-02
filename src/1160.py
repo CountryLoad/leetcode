@@ -3,7 +3,7 @@
 
 # 1160. Find Words That Can Be Formed by Characters
 
-# 
+# 字典计数
 class Solution(object):
     def countCharacters(self, words, chars):
         """
